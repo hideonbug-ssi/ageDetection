@@ -60,7 +60,7 @@ with mp_face_detection.FaceDetection(min_detection_confidence=0.5) as face_detec
                 # Change condition to check if face_index is in dictionary and if delay has passed
                 if face_index not in last_face_time or face_detected_time - last_face_time[face_index] >= 5:
                     start_processing[face_index] = True
-                    last_face_time[face_index] = face_detected_time
+                last_face_time[face_index] = face_detected_time
 
                 # Change condition to use get method with default value False
                 if start_processing.get(face_index, False):
